@@ -49,6 +49,10 @@ public:
 	static bool PointToRect(const FTransform& _Left, const FTransform& _Right);
 	static bool PointToCircle(const FTransform& _Left, const FTransform& _Right);
 public:
+	void AddScale(FVector _Value)
+	{
+		Scale += _Value;
+	}
 	void SetScale(FVector _Value)
 	{
 		Scale = _Value;
@@ -57,6 +61,21 @@ public:
 	{
 		return Scale;
 	}
+
+	void AddRotation(FVector _Value)
+	{
+		Rotation += _Value;
+	}
+	void SetRotation(FVector _Value)
+	{
+		Rotation = _Value;
+	}
+	FVector GetRotation() const
+	{
+		return Rotation;
+	}
+
+
 	void SetPosition(FVector _Value)
 	{
 		Position = _Value;
@@ -64,10 +83,6 @@ public:
 	void AddPosition(FVector _Value)
 	{
 		Position += _Value;
-	}
-	void AddScale(FVector _Value)
-	{
-		Scale += _Value;
 	}
 	FVector GetPosition() const
 	{
@@ -146,7 +161,8 @@ public:
 protected:
 
 private:
-	FVector Scale;
-	FVector Position;
+	FVector Scale = FVector::One;
+	FVector Rotation = FVector::Zero;
+	FVector Position = FVector::Zero;
 };
 

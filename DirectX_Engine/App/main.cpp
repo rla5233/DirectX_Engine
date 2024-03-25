@@ -13,5 +13,5 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	UEngineWindow NewWindow;
 
 	NewWindow.Open();
-	UEngineWindow::WindowMessageLoop(nullptr, nullptr);
+	UEngineWindow::WindowMessageLoop(nullptr, nullptr);	
 }

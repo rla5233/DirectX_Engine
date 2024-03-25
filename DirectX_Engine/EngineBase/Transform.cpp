@@ -165,12 +165,10 @@ bool FTransform::RectToPoint(const FTransform& _Left, const FTransform& _Right)
 
 
 FTransform::FTransform()
-{
-}
+{}
 
 FTransform::~FTransform()
-{
-}
+{}
 
 bool FTransform::Collision(ECollisionType _ThisType, ECollisionType _OtherType, const FTransform& _Other)
 {
