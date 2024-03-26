@@ -2,10 +2,11 @@
 
 #include <EnginePlatform/EngineWindow.h>
 
+// 정석적인 lib 추가 참조 방법
 #pragma comment (lib, "EngineBase.lib")
 #pragma comment (lib, "EnginePlatform.lib")
 
-class EngineCore
+class UEngineCore
 {
 public:
 	void Update()
@@ -27,9 +28,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	UEngineWindow NewWindow;
 	NewWindow.Open();
 
-	EngineCore Core;
+	UEngineCore Core;
 	UEngineWindow::WindowMessageLoop(
-		std::bind(&EngineCore::Update, &Core),
-		std::bind(&EngineCore::End, &Core)
+		std::bind(&UEngineCore::Update, &Core),
+		std::bind(&UEngineCore::End, &Core)
 	);
 }
