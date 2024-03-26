@@ -61,12 +61,10 @@ void UEngineInput::EngineKey::KeyCheck(float _DeltaTime)
 }
 
 UEngineInput::UEngineInput()
-{
-}
+{}
 
 UEngineInput::~UEngineInput()
-{
-}
+{}
 
 void UEngineInput::InputInit()
 {

@@ -3,12 +3,10 @@
 #include "EngineDebug.h"
 
 UEngineString::UEngineString()
-{
-}
+{}
 
 UEngineString::~UEngineString()
-{
-}
+{}
 
 std::wstring UEngineString::AnsiToUniCode(std::string_view _View)
 {

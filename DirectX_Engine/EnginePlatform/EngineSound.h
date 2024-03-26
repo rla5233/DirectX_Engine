@@ -43,7 +43,8 @@ public:
 		{
 			Control->setPaused(false);
 		}
-		else {
+		else
+		{
 			Control->setPaused(true);
 		}
 	}

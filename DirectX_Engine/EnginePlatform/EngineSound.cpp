@@ -4,12 +4,16 @@
 
 // lib를 사용하는법
 
+// 아예 사라져야 한다. 빌드가 되기 전에 아예 사라져야 한다.
+// 이때 보통 사용하는게 ifdef
+
+
 #ifdef _DEBUG
-	// Debug 일때는
-	#pragma comment(lib, "fmodL_vc.lib")
+// Debug 일때는
+#pragma comment(lib, "fmodL_vc.lib")
 #else
-	// Release 일때는 
-	#pragma comment(lib, "fmod_vc.lib")
+// Release 일때는 
+#pragma comment(lib, "fmod_vc.lib")
 #endif
 
 std::map<std::string, UEngineSound*> UEngineSound::Resources;
@@ -62,12 +66,10 @@ void UEngineSound::ResourcesRelease()
 }
 
 UEngineSound::UEngineSound()
-{
-}
+{}
 
 UEngineSound::~UEngineSound()
-{
-}
+{}
 
 
 void UEngineSound::ResLoad(std::string_view _Path)
