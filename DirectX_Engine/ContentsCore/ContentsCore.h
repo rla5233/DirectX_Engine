@@ -1,7 +1,8 @@
 #pragma once
+#include <EngineCore/EngineCore.h>
 
 // Ό³Έν :
-class UContentsCore
+class UContentsCore : public UserCore
 {
 public:
 	// constructor destructor
@@ -15,6 +16,7 @@ public:
 	UContentsCore& operator=(UContentsCore&& _Other) noexcept = delete;
 
 protected:
+	void Initialize() override;
 
 private:
 

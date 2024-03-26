@@ -2,6 +2,7 @@
 #include <string_view>
 
 #include <EngineCore/EngineCore.h>
+#include <ContentsCore/ContentsCore.h>
 
 // 정석적인 lib 추가 참조 방법
 #pragma comment (lib, "EngineBase.lib")
@@ -14,5 +15,5 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	_In_ LPWSTR    lpCmdLine,
 	_In_ int       nCmdShow) 
 {
-	UEngineCore::Start(hInstance);
+	UEngineCore::Start<UContentsCore>(hInstance);
 }
