@@ -35,22 +35,12 @@ void UEngineWindow::Init(HINSTANCE _hInst)
 
 
 UEngineWindow::UEngineWindow()
-{
-}
+{}
 
 UEngineWindow::~UEngineWindow()
 {
-	if (nullptr != BackBufferImage)
-	{
-		delete BackBufferImage;
-		BackBufferImage = nullptr;
-	}
-
-	if (nullptr != WindowImage)
-	{
-		delete WindowImage;
-		WindowImage = nullptr;
-	}
+	BackBufferImage = nullptr;
+	WindowImage = nullptr;
 }
 
 void UEngineWindow::Open(std::string_view _Title /*= "Title"*/, std::string_view _IconPath /*= ""*/)
@@ -136,7 +126,7 @@ void UEngineWindow::Open(std::string_view _Title /*= "Title"*/, std::string_view
 
 	if (nullptr == WindowImage)
 	{
-		WindowImage = new UWindowImage();
+		WindowImage = std::make_shared<UWindowImage>();
 		WindowImage->Create(hDC);
 	}
 
@@ -145,7 +135,7 @@ void UEngineWindow::Open(std::string_view _Title /*= "Title"*/, std::string_view
 	UpdateWindow(hWnd);
 }
 
-unsigned __int64 UEngineWindow::WindowMessageLoop(void(*_Update)(), void(*_End)())
+unsigned __int64 UEngineWindow::WindowMessageLoop(std::function<void()> _Update, std::function<void()> _End)
 {
 	MSG msg = {};
 
@@ -199,17 +189,7 @@ void UEngineWindow::SetWindowScale(const FVector& _Scale)
 {
 	Scale = _Scale;
 
-
-	// window크기만한 이미지를 만들거라고 했는데.
-	// Load랑 다르다.
-
-	if (nullptr != BackBufferImage)
-	{
-		delete BackBufferImage;
-		BackBufferImage = nullptr;
-	}
-
-	BackBufferImage = new UWindowImage();
+	BackBufferImage = std::make_shared<UWindowImage>();
 	BackBufferImage->Create(WindowImage, Scale);
 
 	// 메뉴크기까지 포함 윈도우의 크기를 만들어줍니다.
