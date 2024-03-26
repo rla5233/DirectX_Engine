@@ -18,8 +18,7 @@
 #pragma comment(lib, "Gdiplus.lib")
 
 UWindowImage::UWindowImage()
-{
-}
+{}
 
 UWindowImage::~UWindowImage()
 {
@@ -63,7 +62,7 @@ bool UWindowImage::Create(HDC _MainDC)
 	return true;
 }
 
-bool UWindowImage::Load(UWindowImage* _Image)
+bool UWindowImage::Load(std::shared_ptr<UWindowImage> _Image)
 {
 	LoadType = EImageLoadType::IMG_Cutting;
 
@@ -160,7 +159,7 @@ bool UWindowImage::Load(UWindowImage* _Image)
 }
 
 
-bool UWindowImage::LoadFolder(UWindowImage* _Image)
+bool UWindowImage::LoadFolder(std::shared_ptr<UWindowImage> _Image)
 {
 	LoadType = EImageLoadType::IMG_Folder;
 
@@ -231,7 +230,7 @@ bool UWindowImage::LoadFolder(UWindowImage* _Image)
 	return true;
 }
 
-bool UWindowImage::Create(UWindowImage* _Image, const FVector& _Scale)
+bool UWindowImage::Create(std::shared_ptr<UWindowImage> _Image, const FVector& _Scale)
 {
 	// 시작이 먼저 이미지를 만든다.
 
@@ -264,7 +263,7 @@ bool UWindowImage::Create(UWindowImage* _Image, const FVector& _Scale)
 	return true;
 }
 
-void UWindowImage::BitCopy(UWindowImage* _CopyImage, const FTransform& _Trans)
+void UWindowImage::BitCopy(std::shared_ptr<UWindowImage> _CopyImage, const FTransform& _Trans)
 {
 	if (nullptr == _CopyImage)
 	{
@@ -300,7 +299,7 @@ void UWindowImage::BitCopy(UWindowImage* _CopyImage, const FTransform& _Trans)
 	);
 }
 
-void UWindowImage::TransCopy(UWindowImage* _CopyImage, const FTransform& _Trans, int _Index, Color8Bit _Color)
+void UWindowImage::TransCopy(std::shared_ptr<UWindowImage> _CopyImage, const FTransform& _Trans, int _Index, Color8Bit _Color)
 {
 	if (nullptr == _CopyImage)
 	{
@@ -440,7 +439,7 @@ void UWindowImage::TextCopyFormat(const std::string& _Text, const std::string& _
 	graphics.DrawString(WText.c_str(), -1, &fnt, rectF, &stringFormat, &hB);  //출력
 }
 
-void UWindowImage::AlphaCopy(UWindowImage* _CopyImage, const FTransform& _Trans, int _Index, Color8Bit _Color /*= Color8Bit::Black*/)
+void UWindowImage::AlphaCopy(std::shared_ptr<UWindowImage> _CopyImage, const FTransform& _Trans, int _Index, Color8Bit _Color /*= Color8Bit::Black*/)
 {
 	if (nullptr == _CopyImage)
 	{
@@ -492,7 +491,7 @@ void UWindowImage::AlphaCopy(UWindowImage* _CopyImage, const FTransform& _Trans,
 	);
 }
 
-void UWindowImage::PlgCopy(UWindowImage* _CopyImage, const FTransform& _Trans, int _Index, float _RadAngle)
+void UWindowImage::PlgCopy(std::shared_ptr<UWindowImage> _CopyImage, const FTransform& _Trans, int _Index, float _RadAngle)
 {
 	if (nullptr == _CopyImage)
 	{

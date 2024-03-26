@@ -56,9 +56,9 @@ public:
 	UWindowImage& operator=(UWindowImage&& _Other) noexcept = delete;
 
 	// bool을 리턴해서 false면 실패 true면 성공
-	bool Load(UWindowImage* _Image);
+	bool Load(std::shared_ptr<UWindowImage> _Image);
 
-	bool LoadFolder(UWindowImage* _Image);
+	bool LoadFolder(std::shared_ptr<UWindowImage> _Image);
 
 	FVector GetScale();
 
@@ -68,20 +68,20 @@ public:
 	//	return ImageDC;
 	//}
 
-	// UWindowImage* _Copy 이 이미지를
+	// std::shared_ptr<UWindowImage> _Copy 이 이미지를
 	// FTransform _Trans 이 위치와 크기로
 	// 나한테 카피해라.
 	// 이미지를 이미지 크기대로만 그릴수 있다.
-	void BitCopy(UWindowImage* _CopyImage, const FTransform& _Trans);
+	void BitCopy(std::shared_ptr<UWindowImage> _CopyImage, const FTransform& _Trans);
 
 	// 이녀석은 이미지를 키울수도 있고 특정 색상을 안그릴수도 있다.
 	// EX) 검은색 화면에서 없애
-	void TransCopy(UWindowImage* _CopyImage, const FTransform& _Trans, int _Index, Color8Bit _Color = Color8Bit::Black);
+	void TransCopy(std::shared_ptr<UWindowImage> _CopyImage, const FTransform& _Trans, int _Index, Color8Bit _Color = Color8Bit::Black);
 
-	void AlphaCopy(UWindowImage* _CopyImage, const FTransform& _Trans, int _Index, Color8Bit _Color = Color8Bit::Black);
+	void AlphaCopy(std::shared_ptr<UWindowImage> _CopyImage, const FTransform& _Trans, int _Index, Color8Bit _Color = Color8Bit::Black);
 
 	// 알파랑 동시에 안될것이다.
-	void PlgCopy(UWindowImage* _CopyImage, const FTransform& _Trans, int _Index, float _RadAngle);
+	void PlgCopy(std::shared_ptr<UWindowImage> _CopyImage, const FTransform& _Trans, int _Index, float _RadAngle);
 
 	void TextCopy(const std::string& _Text, const std::string& _Font, float _Size, const FTransform& _Trans, Color8Bit _Color /*= Color8Bit::Black*/);
 
@@ -93,7 +93,7 @@ public:
 
 	void TextCopyFormat(const std::string& _Text, const std::string& _Font, const Gdiplus::StringFormat& stringFormat, float _Size, const FTransform& _Trans, Color8Bit _Color /*= Color8Bit::Black*/);
 
-	bool Create(UWindowImage* _Image, const FVector& _Scale);
+	bool Create(std::shared_ptr<UWindowImage> _Image, const FVector& _Scale);
 
 	void Cutting(int _X, int _Y);
 
@@ -110,13 +110,13 @@ public:
 	}
 
 	// 이걸 해줘야 회전이 가능합니다.
-	void SetRotationMaskImage(int _Index, UWindowImage* _RotationMaskImage, int _MaskIndex)
+	void SetRotationMaskImage(int _Index, std::shared_ptr<UWindowImage> _RotationMaskImage, int _MaskIndex)
 	{
 		UImageInfo& Ref = _RotationMaskImage->Infos[_MaskIndex];
 		Infos[_Index].RotationMaskImage = &Ref;
 	}
 
-	void SetRotationMaskImageFolder(UWindowImage* _RotationMaskImage)
+	void SetRotationMaskImageFolder(std::shared_ptr<UWindowImage> _RotationMaskImage)
 	{
 		if (Infos.size() != _RotationMaskImage->Infos.size())
 		{
@@ -139,6 +139,11 @@ public:
 		}
 
 		return Infos[_Index];
+	}
+
+	HDC GetImageDC()
+	{
+		return ImageDC;
 	}
 
 protected:
