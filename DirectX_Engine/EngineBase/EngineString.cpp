@@ -78,3 +78,28 @@ std::string UEngineString::ToUpper(std::string_view View)
 
 	return Name;
 }
+
+std::vector<std::string> UEngineString::StringCutting(std::string& _Value, std::string_view _Start, std::string_view _End)
+{
+	std::vector<std::string> Result;
+
+	size_t StartFindOffset = 0;
+
+	while (true)
+	{
+		StartFindOffset = _Value.find_first_of(_Start, StartFindOffset);
+
+		if (std::string::npos == StartFindOffset)
+		{
+			break;
+		}
+
+		size_t EndFindOffset = _Value.find_first_of(_End, StartFindOffset);
+
+		std::string ParseString = _Value.substr(StartFindOffset + 1, EndFindOffset - StartFindOffset - 1);
+		Result.push_back(ParseString);
+		StartFindOffset = EndFindOffset;
+	}
+
+	return Result;
+}
