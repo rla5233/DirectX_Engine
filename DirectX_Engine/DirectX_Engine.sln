@@ -16,10 +16,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level2", "Level2", "{EFEFF9FD-E836-4B03-B662-D527DB91C8BF}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EngineCore", "EngineCore\EngineCore.vcxproj", "{033791D8-0F81-4100-BFAD-4F08EC6DC3C1}"
-	ProjectSection(ProjectDependencies) = postProject
-		{5576D2FA-539A-465C-96ED-9B8A9E6F33CD} = {5576D2FA-539A-465C-96ED-9B8A9E6F33CD}
-		{6C0CB523-74A3-4BEB-925D-C2FD5A7C389B} = {6C0CB523-74A3-4BEB-925D-C2FD5A7C389B}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
