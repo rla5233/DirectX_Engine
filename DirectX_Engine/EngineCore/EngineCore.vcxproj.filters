@@ -4,6 +4,9 @@
     <Filter Include="Core">
       <UniqueIdentifier>{1f943f92-39bf-4469-928d-b200d94d259f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{e07fba83-b037-4a72-a3f6-406323a57ed3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineCore.h">

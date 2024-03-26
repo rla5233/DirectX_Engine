@@ -23,8 +23,8 @@ public:
 
 			std::string DebugOptionText;
 
-			DebugOptionText += std::format("WindowScale : {}, {}\n", WindowScale.iX(), WindowScale.iY());
-			DebugOptionText += std::format("IsDebug : {}\n", IsDebug);
+			DebugOptionText += std::format("WindowScale : [{}], [{}]\n", WindowScale.iX(), WindowScale.iY());
+			DebugOptionText += std::format("IsDebug : [{}]\n", IsDebug);
 
 			_Ser.WriteText(DebugOptionText);
 		}
@@ -33,6 +33,8 @@ public:
 	void DeSerialize(UEngineSerializer& _Ser) override
 	{
 		std::string OptionText = _Ser.ToString();
+
+		std::vector<std::string> Values = UEngineString::StringCutting(OptionText, "[", "]");
 	}
 
 };
