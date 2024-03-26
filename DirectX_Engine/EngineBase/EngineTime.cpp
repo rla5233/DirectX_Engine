@@ -1,12 +1,12 @@
 #include "EngineTime.h"
 #include <Windows.h>
 
-EngineTime::EngineTime()
+UEngineTime::UEngineTime()
 {
 	TimeCheckStart();
 }
 
-EngineTime::~EngineTime()
+UEngineTime::~UEngineTime()
 {}
 
 //typedef union _LARGE_INTEGER {
@@ -22,7 +22,7 @@ EngineTime::~EngineTime()
 //} LARGE_INTEGER;
 
 
-void EngineTime::TimeCheckStart()
+void UEngineTime::TimeCheckStart()
 {
 	// 초당 샐수 있는 양인데.
 	QueryPerformanceFrequency(&Count);
@@ -32,7 +32,7 @@ void EngineTime::TimeCheckStart()
 	dCount = static_cast<double>(Count.QuadPart);
 }
 
-float EngineTime::TimeCheck()
+float UEngineTime::TimeCheck()
 {
 	QueryPerformanceCounter(&CurTime);
 

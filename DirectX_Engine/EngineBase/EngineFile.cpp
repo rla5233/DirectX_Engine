@@ -24,7 +24,7 @@ void UEngineFile::Close()
 	}
 }
 
-void UEngineFile::Open(IOOpenMode _OpenType, IODataType _DataType)
+void UEngineFile::Open(EIOOpenMode _OpenType, EIODataType _DataType)
 {
 	std::string Path = GetFullPath();
 
@@ -32,12 +32,12 @@ void UEngineFile::Open(IOOpenMode _OpenType, IODataType _DataType)
 
 	switch (_OpenType)
 	{
-	case IOOpenMode::Write:
-		OpenMode = IOOpenMode::Write;
+	case EIOOpenMode::Write:
+		OpenMode = EIOOpenMode::Write;
 		Mode += "w";
 		break;
-	case IOOpenMode::Read:
-		OpenMode = IOOpenMode::Read;
+	case EIOOpenMode::Read:
+		OpenMode = EIOOpenMode::Read;
 		Mode += "r";
 		break;
 	default:
@@ -46,10 +46,10 @@ void UEngineFile::Open(IOOpenMode _OpenType, IODataType _DataType)
 
 	switch (_DataType)
 	{
-	case IODataType::Binary:
+	case EIODataType::Binary:
 		Mode += "b";
 		break;
-	case IODataType::Text:
+	case EIODataType::Text:
 		Mode += "t";
 		break;
 	default:
@@ -68,7 +68,7 @@ void UEngineFile::Save(UEngineSerializer& _Data)
 {
 	std::vector<char>& SaveData = _Data.Data;
 
-	if (OpenMode != IOOpenMode::Write)
+	if (OpenMode != EIOOpenMode::Write)
 	{
 		MsgBoxAssert("쓰기 모드로 오픈하지 않은 파일로 쓰려고 했습니다.");
 	}
@@ -84,7 +84,7 @@ __int64 UEngineFile::GetFileSize()
 
 void UEngineFile::Load(UEngineSerializer& _Data)
 {
-	if (OpenMode != IOOpenMode::Read)
+	if (OpenMode != EIOOpenMode::Read)
 	{
 		MsgBoxAssert("읽기 모드로 오픈하지 않은 파일로 읽으려고 했습니다.");
 	}
