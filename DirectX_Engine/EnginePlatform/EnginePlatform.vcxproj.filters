@@ -28,6 +28,9 @@
     <Filter Include="Resources\Sound">
       <UniqueIdentifier>{9eb46ddc-1fc8-4061-b229-79094a150230}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PreCompile">
+      <UniqueIdentifier>{2e8396fb-5598-496e-a21c-fcd7ff73c240}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineWindow.h">
@@ -69,6 +72,9 @@
     <ClInclude Include="EngineResources.h">
       <Filter>Resources</Filter>
     </ClInclude>
+    <ClInclude Include="PreCompile.h">
+      <Filter>PreCompile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EngineWindow.cpp">
@@ -85,6 +91,9 @@
     </ClCompile>
     <ClCompile Include="EngineResources.cpp">
       <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="PreCompile.cpp">
+      <Filter>PreCompile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

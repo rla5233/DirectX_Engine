@@ -1,13 +1,16 @@
+#include "PreCompile.h"
 #include "EngineCore.h"
 #include "EngineOption.h"
 #include <EngineBase/EngineFile.h>
 #include <EngineBase/EngineDirectory.h>
 
-UEngineCore::UEngineCore()
-{}
+UEngineCore::UEngineCore() 
+{
+}
 
-UEngineCore::~UEngineCore()
-{}
+UEngineCore::~UEngineCore() 
+{
+}
 
 UEngineCore* GEngine = nullptr;
 
@@ -15,7 +18,7 @@ void UEngineCore::EngineStart(HINSTANCE _Inst)
 {
 	UEngineDirectory Dir;
 	Dir.MoveToSearchChild("Config");
-
+	
 	FEngineOption Option;
 	if (false == Dir.IsFile("EngineOption.EData"))
 	{

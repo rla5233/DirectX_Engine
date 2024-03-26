@@ -1,9 +1,11 @@
+#include "PreCompile.h"
 #include "EngineFile.h"
 #include "EngineDebug.h"
 #include "EngineSerializer.h"
 
-UEngineFile::UEngineFile()
-{}
+UEngineFile::UEngineFile() 
+{
+}
 
 UEngineFile::UEngineFile(std::filesystem::path _Path)
 	: UEnginePath(_Path)
@@ -11,7 +13,7 @@ UEngineFile::UEngineFile(std::filesystem::path _Path)
 
 }
 
-UEngineFile::~UEngineFile()
+UEngineFile::~UEngineFile() 
 {
 	Close();
 }

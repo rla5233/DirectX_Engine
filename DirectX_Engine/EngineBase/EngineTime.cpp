@@ -1,13 +1,15 @@
+#include "PreCompile.h"
 #include "EngineTime.h"
 #include <Windows.h>
 
-UEngineTime::UEngineTime()
+UEngineTime::UEngineTime() 
 {
 	TimeCheckStart();
 }
 
-UEngineTime::~UEngineTime()
-{}
+UEngineTime::~UEngineTime() 
+{
+}
 
 //typedef union _LARGE_INTEGER {
 //    struct {

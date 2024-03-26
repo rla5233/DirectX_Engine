@@ -1,3 +1,4 @@
+#include "PreCompile.h"
 #include "EngineMath.h"
 
 const float UEngineMath::PI = 3.14159265358979323846264338327950288419716939937510f;
@@ -8,7 +9,7 @@ const float UEngineMath::RToD = 180.0f / UEngineMath::PI;
 
 const float4 float4::Zero = { 0.0f, 0.0f, 0.0f, 0.0f };
 const float4 float4::One = { 1.0f, 1.0f, 1.0f, 0.0f };
-const float4 float4::Left = { -1.0f, 0.0f, 0.0f, 0.0f };
+const float4 float4::Left = {-1.0f, 0.0f, 0.0f, 0.0f};
 const float4 float4::Right = { 1.0f, 0.0f, 0.0f, 0.0f };
 const float4 float4::Up = { 0.0f, -1.0f, 0.0f, 0.0f };
 const float4 float4::Down = { 0.0f, 1.0f, 0.0f, 0.0f };
@@ -33,11 +34,13 @@ const Color8Bit Color8Bit::MagentaA = { 255, 0, 255, 0 };
 const Color8Bit Color8Bit::OrangeA = { 255, 170, 46, 0 };
 const Color8Bit Color8Bit::CyanA = { 0, 255, 255, 0 };
 
-UEngineMath::UEngineMath()
-{}
+UEngineMath::UEngineMath() 
+{
+}
 
-UEngineMath::~UEngineMath()
-{}
+UEngineMath::~UEngineMath() 
+{
+}
 
 
 float4 float4::operator*(const float4x4& _Other) const
@@ -50,7 +53,7 @@ float4 float4::operator*(const float4x4& _Other) const
 	return Result;
 }
 
-float4& float4::operator*=(const class float4x4& _Other)
+float4& float4::operator*=(const class float4x4& _Other) 
 {
 	float4 Result;
 	Result.X = (Arr2D[0][0] * _Other.Arr2D[0][0]) + (Arr2D[0][1] * _Other.Arr2D[1][0]) + (Arr2D[0][2] * _Other.Arr2D[2][0]) + (Arr2D[0][3] * _Other.Arr2D[3][0]);
