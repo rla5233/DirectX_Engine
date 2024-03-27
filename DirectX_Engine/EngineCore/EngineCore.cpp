@@ -4,11 +4,10 @@
 #include <EngineBase/EngineDirectory.h>
 #include <EnginePlatform/EngineSound.h>
 
-UEngineCore::UEngineCore() 
-{
-}
+UEngineCore::UEngineCore()
+{}
 
-UEngineCore::~UEngineCore() 
+UEngineCore::~UEngineCore()
 {
 	// 엔진이 종료할때 기존 엔진 옵션을 세이브 하고 한다.
 	UEngineDirectory Dir;
@@ -28,6 +27,8 @@ void UEngineCore::EngineStart(HINSTANCE _Inst)
 
 	EngineWindow.Open(EngineOption.WindowTitle);
 	EngineWindow.SetWindowScale(EngineOption.WindowScale);
+
+	EngineDevice.Initialize(EngineWindow);
 
 	{
 		UserCorePtr->Initialize();
