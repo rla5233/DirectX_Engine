@@ -171,6 +171,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Actor.h" />
+    <ClInclude Include="ActorComponent.h" />
     <ClInclude Include="EngineCore.h">
       <SubType>
       </SubType>
@@ -188,12 +190,19 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="GameMode.h" />
+    <ClInclude Include="Level.h" />
     <ClInclude Include="PreCompile.h">
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="SceneComponent.h" />
+    <ClInclude Include="TickObject.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="ActorComponent.cpp" />
     <ClCompile Include="EngineCore.cpp">
       <SubType>
       </SubType>
@@ -211,6 +220,8 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="GameMode.cpp" />
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="PreCompile.cpp">
       <SubType>
       </SubType>
@@ -219,6 +230,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="SceneComponent.cpp" />
+    <ClCompile Include="TickObject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
