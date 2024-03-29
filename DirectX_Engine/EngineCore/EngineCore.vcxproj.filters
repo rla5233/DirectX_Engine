@@ -28,11 +28,14 @@
     <Filter Include="Object\Component">
       <UniqueIdentifier>{d5889018-5445-4625-898a-08984e65d0d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\Component\Rendering">
+    <Filter Include="Object\Rendering">
       <UniqueIdentifier>{3b06ca7d-a93c-4bc0-8c46-13f925eeb7b5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\Component\Rendering\Component">
+    <Filter Include="Object\Rendering\Component">
       <UniqueIdentifier>{e7f02358-dcd1-4b9c-85f6-3b6874cce109}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\EngineContent">
+      <UniqueIdentifier>{5ae7ebf1-71c3-47a4-b3b3-0fdf7ea5606a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -76,10 +79,13 @@
       <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.h">
-      <Filter>Object\Component\Rendering\Component</Filter>
+      <Filter>Object\Rendering\Component</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
-      <Filter>Object\Component\Rendering</Filter>
+      <Filter>Object\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultSceneComponent.h">
+      <Filter>Object\EngineContent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -123,10 +129,13 @@
       <Filter>Object</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
-      <Filter>Object\Component\Rendering\Component</Filter>
+      <Filter>Object\Rendering\Component</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
-      <Filter>Object\Component\Rendering</Filter>
+      <Filter>Object\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultSceneComponent.cpp">
+      <Filter>Object\EngineContent</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

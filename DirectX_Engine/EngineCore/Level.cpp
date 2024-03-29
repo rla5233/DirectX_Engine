@@ -6,14 +6,13 @@
 
 bool ULevel::IsActorConstructer = true;
 
-ULevel::ULevel() 
+ULevel::ULevel()
 {
 	MainCamera = std::make_shared<UCamera>();
 }
 
-ULevel::~ULevel() 
-{
-}
+ULevel::~ULevel()
+{}
 
 void ULevel::Tick(float _DeltaTime)
 {
@@ -49,8 +48,9 @@ void ULevel::PushActor(std::shared_ptr<AActor> _Actor)
 		MsgBoxAssert("만들지 않은 액터를 추가하려고 했습니다.");
 		return;
 	}
-	
+
 	_Actor->SetWorld(this);
+	_Actor->RootCheck();
 	_Actor->BeginPlay();
 
 	Actors[_Actor->GetOrder()].push_back(_Actor);
