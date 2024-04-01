@@ -4,9 +4,8 @@
 #include "EngineString.h"
 #include "EngineDebug.h"
 
-UEngineDirectory::UEngineDirectory() 
-{
-}
+UEngineDirectory::UEngineDirectory()
+{}
 
 UEngineDirectory::UEngineDirectory(const UEnginePath& _Path)
 	: UEnginePath(_Path.GetFullPath())
@@ -14,14 +13,13 @@ UEngineDirectory::UEngineDirectory(const UEnginePath& _Path)
 
 }
 
-UEngineDirectory::~UEngineDirectory() 
-{
-}
+UEngineDirectory::~UEngineDirectory()
+{}
 
 void UEngineDirectory::AllFileRecursive(
-	const std::string_view _Path, 
-	std::list<UEngineFile>& _Result, 
-	std::vector<std::string> _Ext /*= std::vector<std::string>()*/, 
+	const std::string_view _Path,
+	std::vector<UEngineFile>& _Result,
+	std::vector<std::string> _Ext /*= std::vector<std::string>()*/,
 	bool _Recursive /*= false*/)
 {
 	std::filesystem::directory_iterator DirIter = std::filesystem::directory_iterator(_Path);
@@ -39,7 +37,7 @@ void UEngineDirectory::AllFileRecursive(
 				AllFileRecursive(Path.string(), _Result, _Ext, _Recursive);
 			}
 			continue;
-		} 
+		}
 
 		if (0 == _Ext.size())
 		{
@@ -77,12 +75,12 @@ bool UEngineDirectory::IsFile(std::string_view _FileName)
 	return std::filesystem::exists(FilePath);
 }
 
-std::list<UEngineFile> UEngineDirectory::AllFile(
-	std::vector<std::string> _Ext /*= std::vector<std::string>()*/, 
+std::vector<UEngineFile> UEngineDirectory::GetAllFile(
+	std::vector<std::string> _Ext /*= std::vector<std::string>()*/,
 	bool _Rescursive /*= false*/
 )
 {
-	std::list<UEngineFile> Result;
+	std::vector<UEngineFile> Result;
 
 	for (size_t i = 0; i < _Ext.size(); i++)
 	{
@@ -93,14 +91,14 @@ std::list<UEngineFile> UEngineDirectory::AllFile(
 	return Result;
 }
 
-std::list<UEngineDirectory> UEngineDirectory::AllDirectory(bool _Recursive/* = false*/)
+std::vector<UEngineDirectory> UEngineDirectory::GetAllDirectory(bool _Recursive/* = false*/)
 {
-	std::list<UEngineDirectory> Result;
+	std::vector<UEngineDirectory> Result;
 	AllDirectoryRecursive(Path.string(), Result, _Recursive);
 	return Result;
 }
 
-void UEngineDirectory::AllDirectoryRecursive(const std::string_view _Path, std::list<UEngineDirectory>& _Result, bool _Recursive/* = false*/)
+void UEngineDirectory::AllDirectoryRecursive(const std::string_view _Path, std::vector<UEngineDirectory>& _Result, bool _Recursive/* = false*/)
 {
 	std::filesystem::directory_iterator DirIter = std::filesystem::directory_iterator(_Path);
 
@@ -128,7 +126,7 @@ void UEngineDirectory::MoveToSearchChild(std::string_view _Path)
 {
 	while (true)
 	{
-		std::list<UEngineDirectory> Dir = AllDirectory();
+		std::vector<UEngineDirectory> Dir = GetAllDirectory();
 
 		for (UEngineDirectory& _Dir : Dir)
 		{
