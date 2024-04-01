@@ -292,6 +292,9 @@
       </SubType>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Config\EngineOption.EData" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

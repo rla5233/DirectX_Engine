@@ -42,7 +42,4 @@
       <Filter>Object</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\Config\EngineOption.EData" />
-  </ItemGroup>
 </Project>
