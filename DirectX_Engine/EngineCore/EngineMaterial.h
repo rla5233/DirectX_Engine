@@ -50,6 +50,6 @@ private:
 	std::shared_ptr<UEngineVertexShader> VertexShader = nullptr;
 	std::shared_ptr<UEnginePixelShader> PixelShader = nullptr;
 	std::shared_ptr<UEngineRasterizer> Rasterizer = nullptr;
-
+	
 };
 

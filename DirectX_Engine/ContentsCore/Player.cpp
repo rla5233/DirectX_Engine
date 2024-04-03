@@ -18,10 +18,32 @@ void APlayer::BeginPlay()
 {
 	Super::BeginPlay();
 
+	SetActorScale3D(FVector(100.0f, 100.0f, 100.0f));
 }
 
 void APlayer::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
+	float Speed = 100.0f;
+
+	if (true == UEngineInput::IsPress('A'))
+	{
+		AddActorLocation(FVector::Left * _DeltaTime * Speed);
+	}
+
+	if (true == UEngineInput::IsPress('D'))
+	{
+		AddActorLocation(FVector::Right * _DeltaTime * Speed);
+	}
+
+	if (true == UEngineInput::IsPress('W'))
+	{
+		AddActorLocation(FVector::Up * _DeltaTime * Speed);
+	}
+
+	if (true == UEngineInput::IsPress('S'))
+	{
+		AddActorLocation(FVector::Down * _DeltaTime * Speed);
+	}
 }

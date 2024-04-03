@@ -2,11 +2,13 @@
 #include "EngineIndexBuffer.h"
 #include "EngineCore.h"
 
-UEngineIndexBuffer::UEngineIndexBuffer()
-{}
+UEngineIndexBuffer::UEngineIndexBuffer() 
+{
+}
 
-UEngineIndexBuffer::~UEngineIndexBuffer()
-{}
+UEngineIndexBuffer::~UEngineIndexBuffer() 
+{
+}
 
 
 void UEngineIndexBuffer::ResCreate(const void* _Data, UINT _Size, UINT _Count)

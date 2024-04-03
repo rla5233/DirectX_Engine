@@ -3,10 +3,12 @@
 #include <EngineBase/EngineString.h>
 #include "EngineCore.h"
 
-UEngineVertexShader::UEngineVertexShader()
-{}
+UEngineVertexShader::UEngineVertexShader() 
+{
+	Type = EShaderType::Vertex;
+}
 
-UEngineVertexShader::~UEngineVertexShader()
+UEngineVertexShader::~UEngineVertexShader() 
 {
 	if (nullptr != ShaderPtr)
 	{
@@ -16,7 +18,7 @@ UEngineVertexShader::~UEngineVertexShader()
 
 void UEngineVertexShader::ResLoad(std::string_view _EntryPoint, UINT _High /*= 5*/, UINT _Low /*= 0*/)
 {
-
+	
 	// 마소의 typedef 스탠다드
 	// LPCWSTR => const wchar_t* _Path
 	// LP  => 포인터넣어주세요
@@ -29,7 +31,7 @@ void UEngineVertexShader::ResLoad(std::string_view _EntryPoint, UINT _High /*= 5
 	// C => const
 	// W 없음 => char
 	// STR => 문자열
-
+	
    //LPCWSTR pFileName, <= 쉐이더 파일 경로
    //CONST D3D_SHADER_MACRO* pDefines,
    //ID3DInclude* pInclude,
@@ -38,6 +40,8 @@ void UEngineVertexShader::ResLoad(std::string_view _EntryPoint, UINT _High /*= 5
    //UINT Flags1,
    //UINT Flags2,
    //ID3DBlob** ppCode,
+
+	EntryName = _EntryPoint;
 
 	std::string Path = GetPath();
 	const char* PathPtr = Path.c_str();
@@ -92,11 +96,11 @@ void UEngineVertexShader::ResLoad(std::string_view _EntryPoint, UINT _High /*= 5
 	}
 
 	Result = GEngine->GetDirectXDevice()->CreateVertexShader(
-		ShaderCodeBlob->GetBufferPointer(),
+		ShaderCodeBlob->GetBufferPointer(), 
 		ShaderCodeBlob->GetBufferSize(),
 		nullptr,
 		&ShaderPtr
-	);
+		);
 
 	if (S_OK != Result)
 	{
@@ -104,6 +108,7 @@ void UEngineVertexShader::ResLoad(std::string_view _EntryPoint, UINT _High /*= 5
 		return;
 	}
 
+	ShaderResCheck();
 }
 
 void UEngineVertexShader::Setting()

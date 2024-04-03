@@ -4,8 +4,9 @@
 #include "EngineString.h"
 #include "EngineDebug.h"
 
-UEngineDirectory::UEngineDirectory()
-{}
+UEngineDirectory::UEngineDirectory() 
+{
+}
 
 UEngineDirectory::UEngineDirectory(const UEnginePath& _Path)
 	: UEnginePath(_Path.GetFullPath())
@@ -13,13 +14,14 @@ UEngineDirectory::UEngineDirectory(const UEnginePath& _Path)
 
 }
 
-UEngineDirectory::~UEngineDirectory()
-{}
+UEngineDirectory::~UEngineDirectory() 
+{
+}
 
 void UEngineDirectory::AllFileRecursive(
-	const std::string_view _Path,
+	const std::string_view _Path, 
 	std::vector<UEngineFile>& _Result,
-	std::vector<std::string> _Ext /*= std::vector<std::string>()*/,
+	std::vector<std::string> _Ext /*= std::vector<std::string>()*/, 
 	bool _Recursive /*= false*/)
 {
 	std::filesystem::directory_iterator DirIter = std::filesystem::directory_iterator(_Path);
@@ -37,7 +39,7 @@ void UEngineDirectory::AllFileRecursive(
 				AllFileRecursive(Path.string(), _Result, _Ext, _Recursive);
 			}
 			continue;
-		}
+		} 
 
 		if (0 == _Ext.size())
 		{
@@ -76,7 +78,7 @@ bool UEngineDirectory::IsFile(std::string_view _FileName)
 }
 
 std::vector<UEngineFile> UEngineDirectory::GetAllFile(
-	std::vector<std::string> _Ext /*= std::vector<std::string>()*/,
+	std::vector<std::string> _Ext /*= std::vector<std::string>()*/, 
 	bool _Rescursive /*= false*/
 )
 {

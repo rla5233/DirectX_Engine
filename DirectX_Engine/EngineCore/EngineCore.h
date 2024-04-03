@@ -49,6 +49,12 @@ public:
 		EngineWindow.SetWindowScale(_Scale);
 	}
 
+	FVector GetWindowScale()
+	{
+		return EngineWindow.GetWindowScale();
+	}
+
+
 	UEngineGraphicDevice& GetEngineDevice()
 	{
 		return EngineDevice;
@@ -63,7 +69,7 @@ public:
 	{
 		return EngineDevice.GetContext();
 	}
-
+	
 	void ChangeLevel(std::string_view _Name)
 	{
 		std::string UpperName = UEngineString::ToUpper(_Name);

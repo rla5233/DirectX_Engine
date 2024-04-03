@@ -5,11 +5,13 @@
 #include "EngineRasterizer.h"
 #include <EngineBase/EngineDebug.h>
 
-UEngineMaterial::UEngineMaterial()
-{}
+UEngineMaterial::UEngineMaterial() 
+{
+}
 
-UEngineMaterial::~UEngineMaterial()
-{}
+UEngineMaterial::~UEngineMaterial() 
+{
+}
 
 void UEngineMaterial::SetVertexShader(std::string_view _Name)
 {

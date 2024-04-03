@@ -189,10 +189,12 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="EngineConstantBuffer.h" />
     <ClInclude Include="EngineCore.h">
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="EngineEnums.h" />
     <ClInclude Include="EngineGraphicDevice.h" />
     <ClInclude Include="EngineIndexBuffer.h">
       <SubType>
@@ -230,6 +232,7 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="EngineShaderResources.h" />
     <ClInclude Include="EngineTexture.h">
       <SubType>
       </SubType>
@@ -276,6 +279,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="EngineConstantBuffer.cpp" />
     <ClCompile Include="EngineCore.cpp">
       <SubType>
       </SubType>
@@ -318,6 +322,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="EngineShaderResources.cpp" />
     <ClCompile Include="EngineTexture.cpp">
       <SubType>
       </SubType>

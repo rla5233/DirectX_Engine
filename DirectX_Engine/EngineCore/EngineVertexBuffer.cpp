@@ -3,11 +3,13 @@
 #include "EngineCore.h"
 #include "EngineGraphicDevice.h"
 
-UEngineVertexBuffer::UEngineVertexBuffer()
-{}
+UEngineVertexBuffer::UEngineVertexBuffer() 
+{
+}
 
-UEngineVertexBuffer::~UEngineVertexBuffer()
-{}
+UEngineVertexBuffer::~UEngineVertexBuffer() 
+{
+}
 
 void UEngineVertexBuffer::ResCreate(const void* _Data, UINT _Size, UINT _Count)
 {

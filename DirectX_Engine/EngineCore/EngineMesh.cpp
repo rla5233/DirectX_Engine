@@ -2,11 +2,13 @@
 #include "EngineMesh.h"
 #include "EngineCore.h"
 
-UEngineMesh::UEngineMesh()
-{}
+UEngineMesh::UEngineMesh() 
+{
+}
 
-UEngineMesh::~UEngineMesh()
-{}
+UEngineMesh::~UEngineMesh() 
+{
+}
 
 void UEngineMesh::ResCreate(std::string_view _VertexName, std::string_view _IndexName)
 {

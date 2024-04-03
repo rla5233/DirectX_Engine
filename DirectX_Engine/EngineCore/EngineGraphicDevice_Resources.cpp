@@ -76,7 +76,7 @@ void ShaderInit()
 	UEngineDirectory Dir;
 	Dir.MoveToSearchChild("EngineShader");
 
-	std::vector<UEngineFile> Files = Dir.GetAllFile({ ".fx", "hlsl" });
+	std::vector<UEngineFile> Files = Dir.GetAllFile({".fx", "hlsl"});
 
 	for (size_t i = 0; i < Files.size(); i++)
 	{
@@ -122,16 +122,16 @@ void ShaderInit()
 
 void SettingInit()
 {
-	//D3D11_FILL_MODE FillMode;
-	//D3D11_CULL_MODE CullMode;
-	//BOOL FrontCounterClockwise;
-	//INT DepthBias;
-	//FLOAT DepthBiasClamp;
-	//FLOAT SlopeScaledDepthBias;
-	//BOOL DepthClipEnable;
-	//BOOL ScissorEnable;
-	//BOOL MultisampleEnable;
-	//BOOL AntialiasedLineEnable;
+		//D3D11_FILL_MODE FillMode;
+		//D3D11_CULL_MODE CullMode;
+		//BOOL FrontCounterClockwise;
+		//INT DepthBias;
+		//FLOAT DepthBiasClamp;
+		//FLOAT SlopeScaledDepthBias;
+		//BOOL DepthClipEnable;
+		//BOOL ScissorEnable;
+		//BOOL MultisampleEnable;
+		//BOOL AntialiasedLineEnable;
 
 
 	D3D11_RASTERIZER_DESC Desc = {};
@@ -144,7 +144,7 @@ void SettingInit()
 	// 앞면이건 뒷면이건 다 그려라.
 	// 우리 외적으로 앞
 	// 앞면 그리지마
-
+	
 	// Desc.CullMode = D3D11_CULL_MODE::D3D11_CULL_FRONT;
 	// 뒷면 그리지마
 	Desc.CullMode = D3D11_CULL_MODE::D3D11_CULL_BACK;
