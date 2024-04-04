@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="EngineShaderBase.hlsli" />
+    <None Include="EngineTexture.hlsli" />
     <None Include="EngineVertex.hlsli">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>

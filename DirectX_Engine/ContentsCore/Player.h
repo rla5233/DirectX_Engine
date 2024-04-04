@@ -24,4 +24,5 @@ protected:
 
 private:
 	URenderer* Renderer = nullptr;
+	float4 Color;
 };
